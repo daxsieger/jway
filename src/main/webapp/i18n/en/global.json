@@ -7,6 +7,15 @@
       "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
       "entities": {
         "main": "Entities",
+        "evento": "Evento",
+        "assistito": "Assistito",
+        "gestore": "Gestore",
+        "tipoEvento": "Tipo Evento",
+        "produttore": "Produttore",
+        "stato": "Stato",
+        "stadio": "Stadio",
+        "processo": "Processo",
+        "transizioni": "Transizioni",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
       },
       "account": {

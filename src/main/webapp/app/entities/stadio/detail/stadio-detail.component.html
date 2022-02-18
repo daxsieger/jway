@@ -1,0 +1,42 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="stadio">
+      <h2 data-cy="stadioDetailsHeading"><span jhiTranslate="jwayApp.stadio.detail.title">Stadio</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ stadio.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="jwayApp.stadio.idStadio">Id Stadio</span></dt>
+        <dd>
+          <span>{{ stadio.idStadio }}</span>
+        </dd>
+        <dt><span jhiTranslate="jwayApp.stadio.dsStadio">Ds Stadio</span></dt>
+        <dd>
+          <span>{{ stadio.dsStadio }}</span>
+        </dd>
+        <dt><span jhiTranslate="jwayApp.stadio.processo">Processo</span></dt>
+        <dd>
+          <div *ngIf="stadio.processo">
+            <a [routerLink]="['/processo', stadio.processo?.id, 'view']">{{ stadio.processo?.id }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/stadio', stadio.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

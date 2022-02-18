@@ -1,0 +1,21 @@
+{
+  "applications": "*",
+  "changelogDate": "20220218183704",
+  "databaseType": "sql",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "gestore",
+  "fields": [
+    {
+      "fieldName": "idGestore",
+      "fieldType": "Long"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Gestore",
+  "pagination": "infinite-scroll",
+  "readOnly": false,
+  "relationships": [],
+  "service": "serviceImpl"
+}

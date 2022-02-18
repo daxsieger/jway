@@ -1,0 +1,36 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="produttore">
+      <h2 data-cy="produttoreDetailsHeading"><span jhiTranslate="jwayApp.produttore.detail.title">Produttore</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ produttore.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="jwayApp.produttore.idProduttore">Id Produttore</span></dt>
+        <dd>
+          <span>{{ produttore.idProduttore }}</span>
+        </dd>
+        <dt><span jhiTranslate="jwayApp.produttore.dsProduttore">Ds Produttore</span></dt>
+        <dd>
+          <span>{{ produttore.dsProduttore }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/produttore', produttore.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

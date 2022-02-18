@@ -51,6 +51,17 @@ public class CacheConfiguration {
             createCache(cm, com.jway.domain.User.class.getName());
             createCache(cm, com.jway.domain.Authority.class.getName());
             createCache(cm, com.jway.domain.User.class.getName() + ".authorities");
+            createCache(cm, com.jway.domain.Evento.class.getName());
+            createCache(cm, com.jway.domain.Evento.class.getName() + ".statis");
+            createCache(cm, com.jway.domain.Assistito.class.getName());
+            createCache(cm, com.jway.domain.Gestore.class.getName());
+            createCache(cm, com.jway.domain.TipoEvento.class.getName());
+            createCache(cm, com.jway.domain.Produttore.class.getName());
+            createCache(cm, com.jway.domain.Stato.class.getName());
+            createCache(cm, com.jway.domain.Stato.class.getName() + ".eventis");
+            createCache(cm, com.jway.domain.Stadio.class.getName());
+            createCache(cm, com.jway.domain.Processo.class.getName());
+            createCache(cm, com.jway.domain.Transizioni.class.getName());
             // jhipster-needle-ehcache-add-entry
         };
     }

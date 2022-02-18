@@ -1,0 +1,57 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2 id="jhi-stadio-heading" data-cy="StadioCreateUpdateHeading" jhiTranslate="jwayApp.stadio.home.createOrEditLabel">
+        Create or edit a Stadio
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="form-group" [hidden]="editForm.get('id')!.value == null">
+          <label class="form-control-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="jwayApp.stadio.idStadio" for="field_idStadio">Id Stadio</label>
+          <input type="number" class="form-control" name="idStadio" id="field_idStadio" data-cy="idStadio" formControlName="idStadio" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="jwayApp.stadio.dsStadio" for="field_dsStadio">Ds Stadio</label>
+          <input type="text" class="form-control" name="dsStadio" id="field_dsStadio" data-cy="dsStadio" formControlName="dsStadio" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="jwayApp.stadio.processo" for="field_processo">Processo</label>
+          <select class="form-control" id="field_processo" data-cy="processo" name="processo" formControlName="processo">
+            <option [ngValue]="null"></option>
+            <option
+              [ngValue]="processoOption.id === editForm.get('processo')!.value?.id ? editForm.get('processo')!.value : processoOption"
+              *ngFor="let processoOption of processosSharedCollection; trackBy: trackProcessoById"
+            >
+              {{ processoOption.id }}
+            </option>
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

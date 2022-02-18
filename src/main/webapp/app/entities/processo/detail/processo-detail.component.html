@@ -1,0 +1,36 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="processo">
+      <h2 data-cy="processoDetailsHeading"><span jhiTranslate="jwayApp.processo.detail.title">Processo</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ processo.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="jwayApp.processo.idProcesso">Id Processo</span></dt>
+        <dd>
+          <span>{{ processo.idProcesso }}</span>
+        </dd>
+        <dt><span jhiTranslate="jwayApp.processo.dsProcesso">Ds Processo</span></dt>
+        <dd>
+          <span>{{ processo.dsProcesso }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/processo', processo.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>
