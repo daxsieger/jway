@@ -1,0 +1,44 @@
+{
+  "applications": "*",
+  "changelogDate": "20220218183710",
+  "databaseType": "sql",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "transizioni",
+  "fields": [
+    {
+      "fieldName": "idTransizione",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "dsTransizione",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Transizioni",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "processo",
+      "otherEntityRelationshipName": "transizioni",
+      "relationshipName": "processo",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "stadio",
+      "otherEntityRelationshipName": "transizioni",
+      "relationshipName": "stadioIniziale",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "stadio",
+      "otherEntityRelationshipName": "transizioni",
+      "relationshipName": "stadioFinale",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "serviceImpl"
+}

@@ -1,0 +1,25 @@
+{
+  "applications": "*",
+  "changelogDate": "20220218183705",
+  "databaseType": "sql",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "tipo_evento",
+  "fields": [
+    {
+      "fieldName": "idTipoEvento",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "dsTipoEvento",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "TipoEvento",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [],
+  "service": "serviceImpl"
+}

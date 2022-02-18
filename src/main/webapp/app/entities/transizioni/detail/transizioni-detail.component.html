@@ -1,0 +1,54 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="transizioni">
+      <h2 data-cy="transizioniDetailsHeading"><span jhiTranslate="jwayApp.transizioni.detail.title">Transizioni</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ transizioni.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="jwayApp.transizioni.idTransizione">Id Transizione</span></dt>
+        <dd>
+          <span>{{ transizioni.idTransizione }}</span>
+        </dd>
+        <dt><span jhiTranslate="jwayApp.transizioni.dsTransizione">Ds Transizione</span></dt>
+        <dd>
+          <span>{{ transizioni.dsTransizione }}</span>
+        </dd>
+        <dt><span jhiTranslate="jwayApp.transizioni.processo">Processo</span></dt>
+        <dd>
+          <div *ngIf="transizioni.processo">
+            <a [routerLink]="['/processo', transizioni.processo?.id, 'view']">{{ transizioni.processo?.id }}</a>
+          </div>
+        </dd>
+        <dt><span jhiTranslate="jwayApp.transizioni.stadioIniziale">Stadio Iniziale</span></dt>
+        <dd>
+          <div *ngIf="transizioni.stadioIniziale">
+            <a [routerLink]="['/stadio', transizioni.stadioIniziale?.id, 'view']">{{ transizioni.stadioIniziale?.id }}</a>
+          </div>
+        </dd>
+        <dt><span jhiTranslate="jwayApp.transizioni.stadioFinale">Stadio Finale</span></dt>
+        <dd>
+          <div *ngIf="transizioni.stadioFinale">
+            <a [routerLink]="['/stadio', transizioni.stadioFinale?.id, 'view']">{{ transizioni.stadioFinale?.id }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/transizioni', transizioni.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

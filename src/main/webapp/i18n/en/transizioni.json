@@ -1,0 +1,28 @@
+{
+  "jwayApp": {
+    "transizioni": {
+      "home": {
+        "title": "Transizionis",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Transizioni",
+        "createOrEditLabel": "Create or edit a Transizioni",
+        "notFound": "No Transizionis found"
+      },
+      "created": "A new Transizioni is created with identifier {{ param }}",
+      "updated": "A Transizioni is updated with identifier {{ param }}",
+      "deleted": "A Transizioni is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Transizioni {{ id }}?"
+      },
+      "detail": {
+        "title": "Transizioni"
+      },
+      "id": "ID",
+      "idTransizione": "Id Transizione",
+      "dsTransizione": "Ds Transizione",
+      "processo": "Processo",
+      "stadioIniziale": "Stadio Iniziale",
+      "stadioFinale": "Stadio Finale"
+    }
+  }
+}

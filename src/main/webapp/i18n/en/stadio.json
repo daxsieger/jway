@@ -1,0 +1,26 @@
+{
+  "jwayApp": {
+    "stadio": {
+      "home": {
+        "title": "Stadios",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Stadio",
+        "createOrEditLabel": "Create or edit a Stadio",
+        "notFound": "No Stadios found"
+      },
+      "created": "A new Stadio is created with identifier {{ param }}",
+      "updated": "A Stadio is updated with identifier {{ param }}",
+      "deleted": "A Stadio is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Stadio {{ id }}?"
+      },
+      "detail": {
+        "title": "Stadio"
+      },
+      "id": "ID",
+      "idStadio": "Id Stadio",
+      "dsStadio": "Ds Stadio",
+      "processo": "Processo"
+    }
+  }
+}

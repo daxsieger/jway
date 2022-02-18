@@ -1,0 +1,24 @@
+{
+  "jwayApp": {
+    "assistito": {
+      "home": {
+        "title": "Assistitos",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Assistito",
+        "createOrEditLabel": "Create or edit a Assistito",
+        "notFound": "No Assistitos found"
+      },
+      "created": "A new Assistito is created with identifier {{ param }}",
+      "updated": "A Assistito is updated with identifier {{ param }}",
+      "deleted": "A Assistito is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Assistito {{ id }}?"
+      },
+      "detail": {
+        "title": "Assistito"
+      },
+      "id": "ID",
+      "idAssistito": "Id Assistito"
+    }
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "applications": "*",
+  "changelogDate": "20220218183702",
+  "databaseType": "sql",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "evento",
+  "fields": [
+    {
+      "fieldName": "idEvento",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "tsEvento",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "note",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Evento",
+  "pagination": "infinite-scroll",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "assistito",
+      "otherEntityRelationshipName": "evento",
+      "ownerSide": true,
+      "relationshipName": "assistito",
+      "relationshipType": "one-to-one"
+    },
+    {
+      "otherEntityName": "tipoEvento",
+      "otherEntityRelationshipName": "evento",
+      "ownerSide": true,
+      "relationshipName": "tipo",
+      "relationshipType": "one-to-one"
+    },
+    {
+      "otherEntityName": "gestore",
+      "otherEntityRelationshipName": "evento",
+      "ownerSide": true,
+      "relationshipName": "gestore",
+      "relationshipType": "one-to-one"
+    },
+    {
+      "otherEntityName": "produttore",
+      "otherEntityRelationshipName": "evento",
+      "relationshipName": "origine",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "stato",
+      "otherEntityRelationshipName": "eventi",
+      "ownerSide": true,
+      "relationshipName": "stati",
+      "relationshipType": "many-to-many"
+    }
+  ],
+  "service": "serviceImpl"
+}

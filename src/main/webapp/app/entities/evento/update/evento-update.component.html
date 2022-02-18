@@ -1,0 +1,123 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2 id="jhi-evento-heading" data-cy="EventoCreateUpdateHeading" jhiTranslate="jwayApp.evento.home.createOrEditLabel">
+        Create or edit a Evento
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="form-group" [hidden]="editForm.get('id')!.value == null">
+          <label class="form-control-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="jwayApp.evento.idEvento" for="field_idEvento">Id Evento</label>
+          <input type="number" class="form-control" name="idEvento" id="field_idEvento" data-cy="idEvento" formControlName="idEvento" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="jwayApp.evento.tsEvento" for="field_tsEvento">Ts Evento</label>
+          <div class="d-flex">
+            <input
+              id="field_tsEvento"
+              data-cy="tsEvento"
+              type="datetime-local"
+              class="form-control"
+              name="tsEvento"
+              formControlName="tsEvento"
+              placeholder="YYYY-MM-DD HH:mm"
+            />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="jwayApp.evento.note" for="field_note">Note</label>
+          <input type="text" class="form-control" name="note" id="field_note" data-cy="note" formControlName="note" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="jwayApp.evento.assistito" for="field_assistito">Assistito</label>
+          <select class="form-control" id="field_assistito" data-cy="assistito" name="assistito" formControlName="assistito">
+            <option [ngValue]="null"></option>
+            <option
+              [ngValue]="assistitoOption.id === editForm.get('assistito')!.value?.id ? editForm.get('assistito')!.value : assistitoOption"
+              *ngFor="let assistitoOption of assistitosCollection; trackBy: trackAssistitoById"
+            >
+              {{ assistitoOption.id }}
+            </option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="jwayApp.evento.tipo" for="field_tipo">Tipo</label>
+          <select class="form-control" id="field_tipo" data-cy="tipo" name="tipo" formControlName="tipo">
+            <option [ngValue]="null"></option>
+            <option
+              [ngValue]="tipoEventoOption.id === editForm.get('tipo')!.value?.id ? editForm.get('tipo')!.value : tipoEventoOption"
+              *ngFor="let tipoEventoOption of tiposCollection; trackBy: trackTipoEventoById"
+            >
+              {{ tipoEventoOption.id }}
+            </option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="jwayApp.evento.gestore" for="field_gestore">Gestore</label>
+          <select class="form-control" id="field_gestore" data-cy="gestore" name="gestore" formControlName="gestore">
+            <option [ngValue]="null"></option>
+            <option
+              [ngValue]="gestoreOption.id === editForm.get('gestore')!.value?.id ? editForm.get('gestore')!.value : gestoreOption"
+              *ngFor="let gestoreOption of gestoresCollection; trackBy: trackGestoreById"
+            >
+              {{ gestoreOption.id }}
+            </option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="jwayApp.evento.origine" for="field_origine">Origine</label>
+          <select class="form-control" id="field_origine" data-cy="origine" name="origine" formControlName="origine">
+            <option [ngValue]="null"></option>
+            <option
+              [ngValue]="produttoreOption.id === editForm.get('origine')!.value?.id ? editForm.get('origine')!.value : produttoreOption"
+              *ngFor="let produttoreOption of produttoresSharedCollection; trackBy: trackProduttoreById"
+            >
+              {{ produttoreOption.id }}
+            </option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label jhiTranslate="jwayApp.evento.stati" for="field_statis">Stati</label>
+          <select class="form-control" id="field_statis" data-cy="stati" multiple name="statis" formControlName="statis">
+            <option
+              [ngValue]="getSelectedStato(statoOption, editForm.get('statis')!.value)"
+              *ngFor="let statoOption of statoesSharedCollection; trackBy: trackStatoById"
+            >
+              {{ statoOption.id }}
+            </option>
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

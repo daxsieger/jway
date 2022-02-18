@@ -1,0 +1,32 @@
+{
+  "applications": "*",
+  "changelogDate": "20220218183708",
+  "databaseType": "sql",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "stadio",
+  "fields": [
+    {
+      "fieldName": "idStadio",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "dsStadio",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Stadio",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "processo",
+      "otherEntityRelationshipName": "stadio",
+      "relationshipName": "processo",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "serviceImpl"
+}
