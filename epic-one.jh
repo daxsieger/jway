@@ -1,0 +1,91 @@
+
+entity Evento {
+	idEvento Long,
+    tsEvento Instant,
+    note String,
+}
+
+entity Assistito {
+	idAssistito Long
+}
+
+entity Gestore {
+	idGestore Long
+}
+
+entity TipoEvento {
+	idTipoEvento Long,
+    dsTipoEvento String
+}
+
+entity Produttore {
+	idProduttore Long,
+    dsProduttore String
+}
+
+entity Stato {
+	idStadio Long,
+    dsStadio String,
+    tsCambioStato Instant
+}
+
+
+entity Stadio {
+	idStadio Long,
+    dsStadio String
+}
+
+entity Processo {
+	idProcesso Long,
+    dsProcesso String
+}
+
+entity Transizioni {
+	idTransizione Long,
+    dsTransizione String
+}
+
+// defining multiple oneToOne relationships
+relationship OneToOne {
+	Evento{assistito} to Assistito
+}
+
+relationship OneToOne {
+	Evento{tipo} to TipoEvento
+}
+
+relationship OneToOne {
+	Evento{gestore} to Gestore
+}
+
+relationship OneToOne {
+	Stato{stadio} to Stadio
+}
+
+relationship ManyToOne {
+	Transizioni{processo} to Processo
+    Stadio{processo} to Processo
+}
+
+relationship ManyToOne {
+	Transizioni{stadioIniziale} to Stadio
+	Transizioni{stadioFinale} to Stadio
+}
+
+relationship ManyToMany {
+	Evento{stati} to Stato{eventi}
+}
+
+relationship ManyToOne {
+	Evento{origine} to Produttore
+}
+
+// Set pagination options
+paginate Evento, Assistito, Gestore, Stato with infinite-scroll
+paginate Stadio, Processo, Transizioni, Produttore with pagination
+
+// Use Data Transfert Objects (DTO)
+// dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl
